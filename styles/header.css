@@ -5,6 +5,16 @@
     background-repeat: no-repeat;
     background-position: center;
     display: inline-block;
+    transition: 0.5s;
+
+}
+
+.container__botao:checked~.container__rotulo>.cabeçalho__menu-hamburguer {
+    background-image: url("../img/Menu Aberto.svg");
+}
+
+.container__botao:checked~.container__rotulo {
+    background: var(--azul-degrade);
 }
 
 .cabeçalho {
@@ -66,29 +76,20 @@
     display: none;
 }
 
-.container__texto{
+.container__texto {
     display: none;
 }
 
 @media screen and (min-width: 1024px) {
 
-    .logo__alurabooks {
-        margin: 1em;
-    }
-
-    .container__icones {
-        margin-right: 1em;
-    }
-
     .container__titulo,
     .container__titulo--negrito {
-        font-family: var(--fonte-secundaria);
+        font-family: var(--fonte-secundario);
         font-size: 30px;
     }
 
     .container__titulo {
         font-weight: 400;
-        margin: 0.5em 0 0 0;
         display: block;
     }
 
@@ -114,22 +115,45 @@
         display: none;
     }
 
-    .cabeçalho__menu-hamburguer{
+    .cabeçalho__menu-hamburguer {
         display: none;
     }
 
-    .opções__botão:checked ~ .lista-menu{
+    .opções__botão:checked~.lista-menu {
         display: block;
         width: auto;
     }
 
-    .opções__botão{
+    .opções__botão {
         display: none;
     }
+
+    .opções__botão:checked~.opções__rotulo>.opções__item {
+        background: var(--azul-degrade);
+        color: var(--branco);
+    }
+
+    .opções__item {
+        padding: 2em 1em;
+    }
+
+    .lista-menu__item:hover {
+        background: var(--azul-degrade);
+        
+        
+    }
+
+    .lista-menu__item:hover>.lista-menu__link {
+        -webkit-text-fill-color: var(--branco);
+        
+        
+        
+        text-decoration: none;
+    }
+
 }
 
 @media screen and (min-width: 1728px) {
-
     .container__link {
         display: flex;
         align-items: center;
@@ -137,17 +161,15 @@
         color: var(--preto);
     }
 
-    .container__texto{
-        display: none;
-    }
-
     .cabeçalho {
         padding: 0 2em;
     }
 
-    .opções{
+    .opções {
         margin-right: auto;
-        margin-top: 1em;
-        margin-left: 1em;
+    }
+
+    .container__texto {
+        display: block;
     }
 }
